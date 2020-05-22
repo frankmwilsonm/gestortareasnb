@@ -1,5 +1,6 @@
 package igu;
 
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -10,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
 import data.PersonData;
 import entities.Person;
 
-public class PersonDialog extends JDialog {
+    public class PendientesDialog extends JDialog {
 
     private static final long serialVersionUID = 1L;
     JTextField fromField = new JTextField(" ", 30);
@@ -22,7 +23,7 @@ public class PersonDialog extends JDialog {
     JScrollPane jSP;
     PersonData personData = new PersonData();
 
-    public PersonDialog() {
+    public PendientesDialog() {
         setSize(500, 500);
         setTitle("Tarea Nueva");
         setLocationRelativeTo(null);
