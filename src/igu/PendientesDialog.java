@@ -1,6 +1,5 @@
 package igu;
 
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -14,18 +13,19 @@ import entities.Person;
     public class PendientesDialog extends JDialog {
 
     private static final long serialVersionUID = 1L;
-    JTextField fromField = new JTextField(" ", 30);
-    JTextField toField = new JTextField(30);
+    //JTextField fromField = new JTextField(" ", 30);
+    //JTextField toField = new JTextField(30);
     JButton goButton = new JButton("Back");
-    JButton addButton = new JButton("Agregar Tarea");
-    JButton delButton = new JButton("Eliminar Tarea");
+    //JButton addButton = new JButton("Agregar Tarea");
+    //JButton delButton = new JButton("Eliminar Tarea"); 
+    
     JTable jTable;
     JScrollPane jSP;
     PersonData personData = new PersonData();
 
     public PendientesDialog() {
-        setSize(500, 500);
-        setTitle("Tarea Nueva");
+        setSize(380, 500);
+        setTitle("Tareas Pendientes");
         setLocationRelativeTo(null);
 
         initForm();
@@ -53,12 +53,12 @@ import entities.Person;
         jSP.setViewportView(jTable);
 
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
-        add(new JLabel("Nombre de Tarea:"));
-        add(fromField);
-        add(new JLabel("Fecha a Entregar:"));
-        add(toField);
-        add(addButton);
-        add(delButton);
+        // add(new JLabel("Nombre de Tarea:"));
+        // add(fromField);
+        // add(new JLabel("Fecha a Entregar:"));
+        //add(toField);
+        //add(addButton);
+        //add(delButton);
         add(jSP);
         add(goButton);
 
@@ -70,20 +70,20 @@ import entities.Person;
                 dispose();
             }
         });
-        addButton.addActionListener(new ActionListener() {
+       /* addButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 addPerson(e);
             }
-        });
-        delButton.addActionListener(new ActionListener() {
+        }); */
+       /* delButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 delPerson(e);
             }
-        });
+        }); */
 
     }
 
-    void addPerson(ActionEvent e) {
+   /* void addPerson(ActionEvent e) {
 
         if (fromField.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Asegurate de rellenar los campos");
@@ -98,9 +98,9 @@ import entities.Person;
             paintTable();
         }
 
-    }
+    } */
 
-    void delPerson(ActionEvent e) {
+   /* void delPerson(ActionEvent e) {
         if (jTable.getSelectedRow() != -1) {
             System.out.println(" Eliminar.Button <presionado> ");
             int[] row = jTable.getSelectedRows();
@@ -110,5 +110,5 @@ import entities.Person;
             personData.delete(id);
             paintTable();
         }
-    }
+    } */
 }

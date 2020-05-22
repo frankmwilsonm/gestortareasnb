@@ -23,7 +23,7 @@ public class PersonDialog extends JDialog {
     PersonData personData = new PersonData();
 
     public PersonDialog() {
-        setSize(500, 500);
+        setSize(420, 500);
         setTitle("Tarea Nueva");
         setLocationRelativeTo(null);
 
@@ -50,6 +50,7 @@ public class PersonDialog extends JDialog {
         }, new String[]{"ID", "Nombre", "Fecha"}));
         jSP = new JScrollPane();
         jSP.setViewportView(jTable);
+
 
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
         add(new JLabel("Nombre de Tarea:"));

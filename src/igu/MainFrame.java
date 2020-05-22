@@ -27,25 +27,24 @@ public class MainFrame extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         this.getContentPane().setBackground(Color.gray);
         //setIconImage(new ImageIcon(getClass().getResource("img/favicon.png")).getImage());
-        initMenu();
-        
+        initMenu(); 
     }
 
     void initMenu() {
         // menu
         JMenuBar mb = new JMenuBar();
         JMenu m1 = new JMenu("Archivo");
-        JMenu m2 = new JMenu("Administrar");
-        JMenu m3 = new JMenu("Resumen");
+        JMenu m2 = new JMenu("Tareas");
+        JMenu m3 = new JMenu("Ayuda");
         // 
         mb.add(m1);
         mb.add(m2);
         mb.add(m3);
 
-        m11 = new JMenuItem("Tarea");
+        m11 = new JMenuItem("Nueva Tarea");
         m11.addActionListener(this);
         
-        m22 = new JMenuItem("Administrar");
+        m22 = new JMenuItem("Pendientes");
         m22.addActionListener(this);
         
         m19 = new JMenuItem("Salir");
@@ -53,7 +52,7 @@ public class MainFrame extends JFrame implements ActionListener {
         m1.add(m11);
         //m1.add(m11);
         m1.add(m19);
-        
+
         m2.add(m22);
         
         // setLayout(null); // null setBounds(x,y, w,h)
