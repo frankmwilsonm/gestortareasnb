@@ -4,20 +4,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 import data.PersonData;
 import entities.Person;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
     public class PendientesDialog extends JDialog {
-
     private static final long serialVersionUID = 1L;
-    //JTextField fromField = new JTextField(" ", 30);
-    //JTextField toField = new JTextField(30);
+
     JButton goButton = new JButton("Back");
-    //JButton addButton = new JButton("Agregar Tarea");
-    //JButton delButton = new JButton("Eliminar Tarea"); 
+
     
     JTable jTable;
     JScrollPane jSP;

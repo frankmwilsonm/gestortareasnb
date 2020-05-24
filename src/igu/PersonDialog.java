@@ -4,11 +4,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 import data.PersonData;
 import entities.Person;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 
 public class PersonDialog extends JDialog {
 
@@ -51,7 +59,6 @@ public class PersonDialog extends JDialog {
         jSP = new JScrollPane();
         jSP.setViewportView(jTable);
 
-
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
         add(new JLabel("Nombre de Tarea:"));
         add(fromField);
@@ -86,9 +93,21 @@ public class PersonDialog extends JDialog {
     void addPerson(ActionEvent e) {
 
         if (fromField.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Asegurate de rellenar los campos");
+            JOptionPane.showMessageDialog(this, "Asegurate de rellenar todos los campos");
+            System.out.println(" Agregar.Button <presionado> ");
+            Person d = new Person();
+            d.setName(fromField.getText());
+            d.setSex(toField.getText());
+            personData.create(d);
+            paintTable();
         } else if (this.toField.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Asegurate de rellenar los campos");
+            JOptionPane.showMessageDialog(this, "Asegurate de rellenar todos los campos");
+            System.out.println(" Agregar.Button <presionado> ");
+            Person d = new Person();
+            d.setName(fromField.getText());
+            d.setSex(toField.getText());
+            personData.create(d);
+            paintTable();
         } else {
             System.out.println(" Agregar.Button <presionado> ");
             Person d = new Person();
