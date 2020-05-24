@@ -5,6 +5,6 @@ public class App {
         MainFrame m = new MainFrame();
         m.setVisible(true);
         // code del server
-        // Hi soy sullon
+        // Hi soy frank desde rpi
     }
 }
