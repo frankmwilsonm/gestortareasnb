@@ -3,6 +3,7 @@ package igu;
 //import data.PersonData;
 //import entities.Person;
 import java.awt.BorderLayout;
+import java.awt.Color;
 //import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,12 +33,11 @@ public class MainFrame extends JFrame implements ActionListener {
         setSize(800, 800);
         setTitle("Gestor de Tareas");
         setLocationRelativeTo(null);
-        //this.getContentPane().setBackground(Color.gray);
-        //setIconImage(new ImageIcon(getClass().getResource("img/favicon.png")).getImage());
+        this.getContentPane().setBackground(Color.gray);
         
-        
+
         initMenu();
-      // initForm();
+        // initForm();
     }
 
     void initMenu() {
@@ -87,48 +87,4 @@ public class MainFrame extends JFrame implements ActionListener {
         }
     }
 
-    
-    /*
-    /////////////////////  body  /////////////////////
-    private void paintTable() {
-
-        JButton goButton = new JButton("Back");
-        JTable jTable = null;
-        JScrollPane jSP;
-        PersonData personData = new PersonData();
-
-        DefaultTableModel modelo = (DefaultTableModel) jTable.getModel();
-        List<Person> lis = personData.list();
-        while (modelo.getRowCount() > 0) {
-            modelo.removeRow(0);
-        }
-        for (Person d : lis) {
-            modelo.addRow(new Object[]{d.getId(), d.getName(), d.getSex()});
-        }
-    }
-
-    void initForm() {
-
-        JTable jTable = new JTable();
-        jTable.setModel(new DefaultTableModel(new Object[][]{ // { 1, 2 },
-        }, new String[]{"ID", "Nombre", "Fecha"}));
-        JScrollPane jSP = new JScrollPane();
-        jSP.setViewportView(jTable);
-
-        setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
-
-        add(jSP);
-        PopupMenu goButton = null;
-        add(goButton);
-
-        final MainFrame outer = this;
-        goButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-
-                dispose();
-            }
-        });
-
-    } */
-    
 }
