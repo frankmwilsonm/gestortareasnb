@@ -14,12 +14,14 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.UIManager;
+import javax.swing.plaf.synth.SynthLookAndFeel;
 //import javax.swing.JScrollPane;
 //import javax.swing.JTable;
 //import javax.swing.table.DefaultTableModel;
 
 public class MainFrame extends JFrame implements ActionListener {
-
+    
     private static final long serialVersionUID = 1L;
     JMenuItem m11;
     JMenuItem m12;
@@ -33,7 +35,8 @@ public class MainFrame extends JFrame implements ActionListener {
         setSize(800, 800);
         setTitle("Gestor de Tareas");
         setLocationRelativeTo(null);
-        this.getContentPane().setBackground(Color.gray);
+        getContentPane().setBackground(Color.gray);
+        
         
 
         initMenu();

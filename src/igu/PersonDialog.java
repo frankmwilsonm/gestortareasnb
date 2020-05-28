@@ -8,6 +8,7 @@ import javax.swing.table.DefaultTableModel;
 
 import data.PersonData;
 import entities.Person;
+import java.awt.Color;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -17,12 +18,13 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
-
 public class PersonDialog extends JDialog {
 
     private static final long serialVersionUID = 1L;
-    JTextField fromField = new JTextField(" ", 30);
+    JTextField fromField = new JTextField(30);
     JTextField toField = new JTextField(30);
+    JTextField toFieldHora = new JTextField(30);
+
     JButton goButton = new JButton("Back");
     JButton addButton = new JButton("Agregar Tarea");
     JButton delButton = new JButton("Eliminar Tarea");
@@ -34,9 +36,9 @@ public class PersonDialog extends JDialog {
         setSize(420, 500);
         setTitle("Tarea Nueva");
         setLocationRelativeTo(null);
-
         initForm();
         paintTable();
+        getContentPane().setBackground(Color.gray);
     }
 
     private void paintTable() {
@@ -46,7 +48,7 @@ public class PersonDialog extends JDialog {
             modelo.removeRow(0);
         }
         for (Person d : lis) {
-            modelo.addRow(new Object[]{d.getId(), d.getName(), d.getSex()});
+            modelo.addRow(new Object[]{d.getId(), d.getName(), d.getSex(), d.getHora()});
         }
     }
 
@@ -55,7 +57,7 @@ public class PersonDialog extends JDialog {
         jTable = new JTable();
         jTable.setModel(new DefaultTableModel(new Object[][]{ // { 1, 2 },
         // { 3, 4 }
-        }, new String[]{"ID", "Nombre", "Fecha"}));
+        }, new String[]{"ID", "Tarea", "Fecha", "Hora"}));
         jSP = new JScrollPane();
         jSP.setViewportView(jTable);
 
@@ -63,7 +65,13 @@ public class PersonDialog extends JDialog {
         add(new JLabel("Nombre de Tarea:"));
         add(fromField);
         add(new JLabel("Fecha a Entregar:"));
+
         add(toField);
+
+        add(new JLabel("Hora a Entregar:"));
+
+        add(toFieldHora);
+
         add(addButton);
         add(delButton);
         add(jSP);
@@ -98,6 +106,7 @@ public class PersonDialog extends JDialog {
             Person d = new Person();
             d.setName(fromField.getText());
             d.setSex(toField.getText());
+            d.setHora(toFieldHora.getText());
             personData.create(d);
             paintTable();
         } else if (this.toField.getText().equals("")) {
@@ -106,13 +115,26 @@ public class PersonDialog extends JDialog {
             Person d = new Person();
             d.setName(fromField.getText());
             d.setSex(toField.getText());
+            d.setHora(toFieldHora.getText());
             personData.create(d);
             paintTable();
+            
+        } else if (this.toFieldHora.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Asegurate de rellenar todos los campos");
+            System.out.println(" Agregar.Button <presionado> ");
+            Person d = new Person();
+            d.setName(fromField.getText());
+            d.setSex(toField.getText());
+            d.setHora(toFieldHora.getText());
+            personData.create(d);
+            paintTable();
+
         } else {
             System.out.println(" Agregar.Button <presionado> ");
             Person d = new Person();
             d.setName(fromField.getText());
             d.setSex(toField.getText());
+            d.setHora(toFieldHora.getText());
             personData.create(d);
             paintTable();
         }

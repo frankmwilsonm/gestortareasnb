@@ -49,7 +49,7 @@ import javax.swing.JTable;
         jTable = new JTable();
         jTable.setModel(new DefaultTableModel(new Object[][]{ // { 1, 2 },
         // { 3, 4 }
-        }, new String[]{"ID", "Nombre", "Fecha"}));
+        }, new String[]{"ID", "Tarea", "Fecha", "Hora"}));
         jSP = new JScrollPane();
         jSP.setViewportView(jTable);
 

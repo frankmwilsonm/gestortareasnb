@@ -4,6 +4,7 @@ public class Person {
     int id;
     String name;
     String sex;
+    String hora;
 
     public String getName() {
         return name;
@@ -27,6 +28,14 @@ public class Person {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+     public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
     }
     
 }
