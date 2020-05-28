@@ -9,6 +9,7 @@ import javax.swing.table.DefaultTableModel;
 import data.PersonData;
 import entities.Person;
 import java.awt.Color;
+import java.awt.Toolkit;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -39,6 +40,7 @@ public class PersonDialog extends JDialog {
         initForm();
         paintTable();
         getContentPane().setBackground(Color.gray);
+        setIconImage();
     }
 
     private void paintTable() {
@@ -151,5 +153,10 @@ public class PersonDialog extends JDialog {
             personData.delete(id);
             paintTable();
         }
+    }
+
+    private void setIconImage() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("favicon.png")));
+        
     }
 }

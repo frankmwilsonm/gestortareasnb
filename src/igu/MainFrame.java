@@ -4,6 +4,7 @@ package igu;
 //import entities.Person;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Toolkit;
 //import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,7 +39,7 @@ public class MainFrame extends JFrame implements ActionListener {
         getContentPane().setBackground(Color.gray);
         
         
-
+        setIconImage();    
         initMenu();
         // initForm();
     }
@@ -88,6 +89,10 @@ public class MainFrame extends JFrame implements ActionListener {
             System.out.println("Menu 1.3  <presionado> ");
             System.exit(0);
         }
+    }
+
+    private void setIconImage() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("favicon.png")));
     }
 
 }
