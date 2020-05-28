@@ -11,7 +11,6 @@ public class PersonData {
     static List<Person> lis = new CopyOnWriteArrayList<Person>();
     static int id=0;
 
-
     public PersonData() {
     }
 

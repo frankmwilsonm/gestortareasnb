@@ -40,7 +40,7 @@ import javax.swing.JTable;
             modelo.removeRow(0);
         }
         for (Person d : lis) {
-            modelo.addRow(new Object[]{d.getId(), d.getName(), d.getSex()});
+            modelo.addRow(new Object[]{d.getId(), d.getName(), d.getSex(), d.getHora()});
         }
     }
 
